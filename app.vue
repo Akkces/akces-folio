@@ -1,14 +1,14 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-bl from-gray-950 to-gray-800 flex items-center justify-center p-4"
+    class="flex min-h-screen items-center justify-center bg-gradient-to-bl from-gray-950 to-gray-800 p-4"
   >
     <!-- Card Container avec animation d'entrée -->
     <div
-      class="max-w-2xl w-full bg-gray-800/50 backdrop-blur-sm p-10 rounded-xl transform transition-all duration-700 hover:scale-[1.02] shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 border border-gray-700/50 hover:border-blue-500/30"
+      class="w-full max-w-2xl transform rounded-xl border border-gray-700/50 bg-gray-800/50 p-10 shadow-lg backdrop-blur-sm transition-all duration-700 hover:scale-[1.02] hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/20"
     >
       <!-- Logo avec animation de rotation au hover -->
-      <div class="relative mb-10 flex justify-center w-max m-auto">
-        <span class="absolute flex size-3 right-5 -top-2">
+      <div class="relative m-auto mb-10 flex w-max justify-center">
+        <span class="absolute -top-2 right-5 flex size-3">
           <span
             class="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"
           ></span>
@@ -19,7 +19,7 @@
         <svg
           id="aks-logo"
           viewBox="0 0 1000 665.1"
-          class="w-32 transition-all duration-500 hover:rotate-[360deg] hover:scale-110 cursor-pointer"
+          class="w-32 cursor-pointer transition-all duration-500 hover:scale-110 hover:rotate-[360deg]"
           fill="white"
         >
           <path
@@ -29,55 +29,55 @@
       </div>
 
       <!-- Titre avec animation de gradient -->
-      <h1 class="relative mb-5 text-4xl sm:text-5xl text-center font-bold">
+      <h1 class="relative mb-5 text-center text-4xl font-bold sm:text-5xl">
         <span
-          class="bg-gradient-to-r from-blue-500 via-red-500 to-orange-500 text-transparent bg-clip-text bg-[length:200%] animate-gradient uppercase"
+          class="animate-gradient bg-gradient-to-r from-blue-500 via-red-500 to-orange-500 bg-[length:200%] bg-clip-text text-transparent uppercase"
         >
           Site en construction
         </span>
       </h1>
 
       <!-- Countdown -->
-      <div class="flex justify-center gap-4 my-8">
+      <div class="my-8 flex justify-center gap-4">
         <div
           v-for="(unit, index) in timeUnits"
           :key="index"
-          class="flex flex-col items-center p-4 bg-gray-900/50 rounded-lg border border-gray-700 transform hover:scale-105 transition-all duration-300 min-w-[90px]"
+          class="flex min-w-[90px] transform flex-col items-center rounded-lg border border-gray-700 bg-gray-900/50 p-4 transition-all duration-300 hover:scale-105"
         >
           <span class="text-3xl font-bold text-blue-400">{{ unit.value }}</span>
-          <span class="text-sm text-gray-400 mt-1">{{ unit.label }}</span>
+          <span class="mt-1 text-sm text-gray-400">{{ unit.label }}</span>
         </div>
       </div>
 
       <!-- Séparateur avec animation -->
       <div class="relative">
         <div
-          class="w-32 h-1 mx-auto bg-gray-800 rounded-full mb-12 before:content-[''] before:absolute before:top-0 before:left-1/2 before:w-0 before:h-1 before:bg-orange-500 before:rounded-full before:transition-all before:duration-700 group-hover:before:w-32 group-hover:before:left-[calc(50%-4rem)]"
+          class="mx-auto mb-12 h-1 w-32 rounded-full bg-gray-800 before:absolute before:top-0 before:left-1/2 before:h-1 before:w-0 before:rounded-full before:bg-orange-500 before:transition-all before:duration-700 before:content-[''] group-hover:before:left-[calc(50%-4rem)] group-hover:before:w-32"
         ></div>
       </div>
 
       <!-- Texte avec animation de fade -->
       <p
-        class="text-white/90 text-center text-lg sm:text-xl transform transition-all duration-500 hover:text-white"
+        class="transform text-center text-lg text-white/90 transition-all duration-500 hover:text-white sm:text-xl"
       >
         Nous travaillons activement pour vous offrir une
-        <span class="relative inline-block group cursor-pointer">
+        <span class="group relative inline-block cursor-pointer">
           <span class="text-blue-500">expérience exceptionnelle</span>
           <span
-            class="absolute -bottom-1 left-0 w-full h-1 bg-blue-500 transform rounded-full scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+            class="absolute -bottom-1 left-0 h-1 w-full scale-x-0 transform rounded-full bg-blue-500 transition-transform duration-300 group-hover:scale-x-100"
           ></span>
         </span>
       </p>
 
       <!-- Points de chargement animés -->
-      <div class="flex justify-center gap-2 mt-8">
+      <div class="mt-8 flex justify-center gap-2">
         <div
-          class="w-2 h-2 rounded-full bg-gray-500 animate-bounce [animation-delay:-0.3s]"
+          class="h-2 w-2 animate-bounce rounded-full bg-gray-500 [animation-delay:-0.3s]"
         ></div>
         <div
-          class="w-2 h-2 rounded-full bg-gray-500 animate-bounce [animation-delay:-0.15s]"
+          class="h-2 w-2 animate-bounce rounded-full bg-gray-500 [animation-delay:-0.15s]"
         ></div>
-        <div class="w-2 h-2 rounded-full bg-gray-500 animate-bounce"></div>
+        <div class="h-2 w-2 animate-bounce rounded-full bg-gray-500"></div>
       </div>
     </div>
   </div>
@@ -85,6 +85,18 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+
+// Définir le titre de la page
+useHead({
+  title: "Maxime Liger - Bientôt Disponible",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Notre site est en cours de construction. Revenez bientôt pour découvrir notre nouvelle plateforme!",
+    },
+  ],
+});
 
 // Calculer la date cible (30 jours à partir de maintenant)
 const targetDate = new Date();
@@ -103,10 +115,10 @@ const updateCountdown = () => {
 
   timeUnits.value[0].value = Math.floor(distance / (1000 * 60 * 60 * 24));
   timeUnits.value[1].value = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
   );
   timeUnits.value[2].value = Math.floor(
-    (distance % (1000 * 60 * 60)) / (1000 * 60)
+    (distance % (1000 * 60 * 60)) / (1000 * 60),
   );
   timeUnits.value[3].value = Math.floor((distance % (1000 * 60)) / 1000);
 };
