@@ -10,5 +10,10 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
 
+  ssr: true,
+  nitro: {
+    preset: "vercel",
+  },
+
   modules: ["nuxt-svgo"],
 });
